@@ -7,7 +7,7 @@ class TestStudentClass < MiniTest::Test
   @student_one
 
   def setup
-    @student_one = StudentClass.new("Kynan", 16)
+    @student_one = StudentClass.new("Kynan", 16, "Python")
   end
 
   def test_student_name
@@ -26,6 +26,11 @@ class TestStudentClass < MiniTest::Test
   def test_change_cohort
     @student_one.change_cohort(20)
     assert_equal(20, @student_one.cohort_number)
+  end
+
+  def test_student_quote
+    @student_one.student_quote()
+    assert_equal("What is a computer?", @student_one.student_quote)
   end
 
 end
