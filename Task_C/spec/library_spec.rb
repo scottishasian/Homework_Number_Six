@@ -44,4 +44,11 @@ class TestLibrary < MiniTest::Test
     assert_equal("leviathan_wakes", book[:title])
   end
 
+  def test_rental_details
+    rental = @books.rental_details("the_martian")
+    assert_equal({
+      student_name: "James Kirk",
+      date: "23/09/2017"}, rental)
+  end
+
 end

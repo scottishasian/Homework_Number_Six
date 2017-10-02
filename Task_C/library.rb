@@ -24,4 +24,15 @@ class Library
     end
   end
 
+#Create a method that takes in a book title
+#and returns only the rental details for that book.
+
+  def rental_details(book_name)
+    for rental in @books
+      if rental[:title] == book_name
+        return rental[:rental_details]
+      end
+    end
+  end
+
 end
