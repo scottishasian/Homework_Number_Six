@@ -1,10 +1,9 @@
 class StudentClass
   #attr_accessor :student_name,:cohort_number
 
-  def initialize(student_name, cohort_number, fav_language)
+  def initialize(student_name, cohort_number)
     @student_name = student_name
     @cohort_number = cohort_number
-    @fav_language = fav_language
   end
 
   def student_name
@@ -24,7 +23,12 @@ class StudentClass
   end
 
   def student_quote
-    return "What is a computer?" if @cohort_number == 16
+    return "What is a computer?" if @student_name == "Kynan"
+  end
+
+  def favourite_language(language)
+  return "I love #{language}" if @student_name == "Kynan"
+  return "I love #{language}" if @student_name == "Josie"
   end
 
 

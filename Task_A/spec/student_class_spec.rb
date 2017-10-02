@@ -5,9 +5,11 @@ require_relative( '../student_class.rb')
 class TestStudentClass < MiniTest::Test
 
   @student_one
+  @student_two
 
   def setup
-    @student_one = StudentClass.new("Kynan", 16, "Python")
+    @student_one = StudentClass.new("Kynan", 16)
+    @student_two = StudentClass.new("Josie", 20)
   end
 
   def test_student_name
@@ -31,6 +33,13 @@ class TestStudentClass < MiniTest::Test
   def test_student_quote
     @student_one.student_quote()
     assert_equal("What is a computer?", @student_one.student_quote)
+  end
+
+  def test_favourite_language
+  result = @student_one.favourite_language("Python")
+  result2 = @student_two.favourite_language("SQL")
+    assert_equal("I love Python", result)
+    assert_equal("I love SQL", result2)
   end
 
 end
