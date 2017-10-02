@@ -1,10 +1,11 @@
 class SportsTeam
-  attr_accessor :team_name, :rowers, :coach
+  attr_accessor :team_name, :rowers, :coach, :points
 
-  def initialize(team_name, rowers, coach)
+  def initialize(team_name, rowers, coach, points)
     @team_name = team_name
     @rowers = rowers
     @coach = coach
+    @points = points
   end
 
   # def team_name
@@ -29,9 +30,14 @@ class SportsTeam
 
   def rower_check(name)
     for rower in @rowers
-      if rower == name
-        return true
-      end
+      return true if rower == name
+    end
+  end
+
+  def win_or_lose_check(status)
+    if status == "win"
+      @points += 1
+      return "win"
     end
   end
 
