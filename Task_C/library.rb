@@ -10,7 +10,6 @@ class Library
 
   def view_stock()
     return @books
-    puts @books
   end
 
 #Create a method that takes in a book title and returns all of the information
@@ -33,6 +32,19 @@ class Library
         return rental[:rental_details]
       end
     end
+  end
+
+# Create a method that takes in a book title and adds it to
+# our book list (Add a new hash for the book with
+# the student name and date being left as empty strings)
+
+  def add_book_by_name(book_name)
+    @books.push({
+      title: book_name,
+      rental_details:{
+        student_name: "",
+        date: ""}
+        })
   end
 
 end
