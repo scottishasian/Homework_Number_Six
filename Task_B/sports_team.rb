@@ -27,5 +27,13 @@ class SportsTeam
     @rowers.push(name)
   end
 
+  def rower_check(name)
+    for rower in @rowers
+      if rower == name
+        return true
+      end
+    end
+  end
+
 
 end
