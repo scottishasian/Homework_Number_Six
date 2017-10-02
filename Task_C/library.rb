@@ -47,4 +47,15 @@ class Library
         })
   end
 
+# Create a method that changes the rental details of a book by
+# taking in the title of the book, the student renting it and
+# the date it's due to be returned.
+
+  def change_rental_details(book_name, student_name, date)
+    change = find_book_by_name(book_name)
+    change[:rental_details][:student_name] = student_name
+    change[:rental_details][:date] = date
+    return change[:rental_details]
+  end
+
 end

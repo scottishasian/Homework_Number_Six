@@ -56,4 +56,11 @@ class TestLibrary < MiniTest::Test
     assert_equal(@thelibrary.view_stock, added)
   end
 
+  def test_change_rental_details
+    new_rental = @thelibrary.change_rental_details("the_martian", "Hilary Fields", "01/10/2017" )
+    assert_equal({
+      student_name: "Hilary Fields",
+      date: "01/10/2017"}, new_rental)
+  end
+
 end
