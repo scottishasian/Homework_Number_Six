@@ -39,4 +39,9 @@ class TestLibrary < MiniTest::Test
       ], books)
   end
 
+  def test_find_book_by_name
+    book = @books.find_book_by_name("leviathan_wakes")
+    assert_equal("leviathan_wakes", book[:title])
+  end
+
 end
